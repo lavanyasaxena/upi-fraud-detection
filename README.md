@@ -1,4 +1,4 @@
-## upi-fraud-detection
+# UPI Fraud Detection
 
 ### Overview:
 This project focuses on building a machine learning model to detect fraudulent transactions within the Unified Payments Interface (UPI) system, which is a widely used real-time payment infrastructure in India. As digital transactions surge, so does the risk of financial fraud. This system aims to enhance the security of UPI transactions by identifying and flagging suspicious activities in real-time.
