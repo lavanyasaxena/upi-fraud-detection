@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UPI Fraud Detection</title>
+  <link rel="stylesheet" href="ufd.css">
+</head>
+<body>
+  <div class="container">
+    <h1>UPI Fraud Detection</h1>
+    <form id="fraudForm">
+      <label for="upi_id">UPI ID:</label>
+      <input type="text" id="upi_id" name="upi_id" required>
+
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount" required>
+
+      <label for="time">Time (0-24):</label>
+      <input type="number" id="time" name="time" min="0" max="24" required>
+
+      <button type="submit">Check Transaction</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script src="ufd.js"></script>
+</body>
+</html>
