@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UPI Transactions Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>UPI Transactions — Interactive Dashboard</h1>
+      <div class="controls">
+        <label class="hint">Load CSV:</label>
+        <input id="file" type="file" accept=".csv">
+        <button id="sampleBtn">Use sample (100 rows)</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <div class="stats">
+          <div class="stat">
+            <div class="muted">Total Transactions</div>
+            <div id="totalCount" class="value">—</div>
+          </div>
+          <div class="stat">
+            <div class="muted">Total Amount (₹)</div>
+            <div id="totalAmt" class="value">—</div>
+          </div>
+          <div class="stat">
+            <div class="muted">Success / Failed</div>
+            <div id="statusSplit" class="value">—</div>
+          </div>
+        </div>
+        <div class="muted">Top receivers:</div>
+        <div class="muted">Highest: <span id="highestRec">—</span></div>
+        <div class="muted">Lowest: <span id="lowestRec">—</span></div>
+      </div>
+
+      <div class="card"><canvas id="pieStatus"></canvas></div>
+      <div class="card full"><canvas id="lineDaily"></canvas></div>
+      <div class="card"><canvas id="barTopSenders"></canvas></div>
+      <div class="card"><canvas id="histAmount"></canvas></div>
+
+      <div class="card full">
+        <div class="muted">Data table (first 200 rows)</div>
+        <div class="table-wrap">
+          <table id="dataTable"><thead></thead><tbody></tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Dashboard parses <code>transactions.csv</code> in your browser. Charts are interactive.
+    </footer>
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
